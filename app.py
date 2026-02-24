@@ -330,11 +330,11 @@ SUPPORTED_MIME = {
 }
 
 WELCOME_MSG = (
-    "👋 *Welcome to Invoice OCR Bot!*\n\n"
+    " *Welcome to Invoice OCR Bot!*\n\n"
     "Send me an invoice as a *photo*, *image file*, or *PDF* and I'll extract "
     "the data and return a formatted Excel file.\n\n"
-    "📎 *Supported formats:* PNG, JPG, JPEG, WebP, PDF\n"
-    "📊 *Output:* .xlsx with Summary, Job Shifts & Misc Costs sheets"
+    " *Supported formats:* PNG, JPG, JPEG, WebP, PDF\n"
+    " *Output:* .xlsx with Summary, Job Shifts & Misc Costs sheets"
 )
 
 
@@ -401,7 +401,7 @@ async def handle_document(update: Update, ctx: ContextTypes.DEFAULT_TYPE):
         return
 
     msg = await update.message.reply_text(
-        f" Received `{doc.file_name}`. Extracting data… ⏳",
+        f" Received `{doc.file_name}`. Extracting data…",
         parse_mode="Markdown",
     )
 
@@ -436,7 +436,7 @@ async def handle_document(update: Update, ctx: ContextTypes.DEFAULT_TYPE):
 
 async def handle_unknown(update: Update, ctx: ContextTypes.DEFAULT_TYPE):
     await update.message.reply_text(
-        "🤔 Please send me an invoice image or PDF.\nType /help for instructions."
+        " Please send me an invoice image or PDF.\nType /help for instructions."
     )
 
 
